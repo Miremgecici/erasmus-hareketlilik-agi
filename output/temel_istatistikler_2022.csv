@@ -1,0 +1,10 @@
+,kurum,ulke
+Düğüm sayısı,"36,609",176
+Kenar sayısı,"124,112","3,060"
+Toplam öğrenci (ağırlık),"290,073","365,550"
+Yoğunluk,0.000093,0.099351
+Zayıf bağlı bileşen,865,1
+En büyük zayıf bileşen (düğüm),"33,206",176
+Güçlü bağlı bileşen,"33,283",44
+En büyük güçlü bileşen (düğüm),"3,307",133
+Çıkarılan öz-döngü (ülke içi),0,12
