@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Erasmus+ Öğrenci Ağı</title>
+<style>
+:root{
+  --bg:#f6f5f2; --panel:#ffffff; --ink:#1d232b; --muted:#5f6670; --line:#e3e1dc; --accent:#c0392b; --in:#2471a3;
+  --chip:#f0efec; --shadow:0 1px 2px rgba(0,0,0,.05),0 4px 16px rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#15181c;--panel:#1e2228;--ink:#e8eaed;--muted:#a0a7b1;--line:#30353d;--chip:#2a2f36;--shadow:none}
+}
+:root[data-theme="dark"]{--bg:#15181c;--panel:#1e2228;--ink:#e8eaed;--muted:#a0a7b1;--line:#30353d;--chip:#2a2f36;--shadow:none}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.app{display:grid;grid-template-columns:320px 1fr;height:100vh}
+aside{background:var(--panel);border-right:1px solid var(--line);overflow-y:auto;padding:18px 18px 24px;display:flex;flex-direction:column;gap:18px}
+h1{font-size:18px;line-height:1.25;margin:0}
+.sub{color:var(--muted);font-size:13px;margin-top:4px}
+.row{display:flex;gap:8px;align-items:center}
+.lang{margin-left:auto;flex:none;display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.lang button{border:0;background:transparent;color:var(--muted);padding:4px 10px;cursor:pointer;font-weight:600;font-size:12px}
+.lang button.on{background:var(--ink);color:var(--panel)}
+summary.sec{cursor:pointer;margin-bottom:8px}
+summary.sec{list-style:none}summary.sec::-webkit-details-marker{display:none}summary.sec::before{content:"▸ "}details[open]>summary.sec::before{content:"▾ "}
+label.sec,summary.sec{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;display:block;margin-bottom:8px}
+.search{position:relative}
+.search input{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-size:14px}
+.search input:focus{outline:2px solid var(--in);outline-offset:-1px}
+.sugg{position:absolute;left:0;right:0;top:40px;background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);z-index:5;max-height:260px;overflow:auto;display:none}
+.sugg div{padding:7px 10px;cursor:pointer;display:flex;gap:8px;align-items:baseline}
+.sugg div:hover,.sugg div.act{background:var(--chip)}
+.sugg small{color:var(--muted);margin-left:auto;white-space:nowrap}
+.comm{display:flex;flex-direction:column;gap:2px}
+.comm label{display:flex;align-items:center;gap:8px;padding:5px 6px;border-radius:6px;cursor:pointer}
+.comm label:hover{background:var(--chip)}
+.comm input{margin:0}
+.dot{width:11px;height:11px;border-radius:50%;flex:none}
+.comm .n{margin-left:auto;color:var(--muted);font-variant-numeric:tabular-nums;font-size:12px}
+.links{display:flex;gap:12px;font-size:12px;margin-top:4px}
+.links a{color:var(--in);cursor:pointer;text-decoration:none}
+.toggle{display:flex;align-items:center;gap:8px;cursor:pointer;padding:6px 0}
+.legend{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.legend span.ln{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.note{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
+.note a{color:var(--muted)}
+main{position:relative;overflow:hidden}
+canvas{display:block;width:100%;height:100%;cursor:grab}
+canvas.drag{cursor:grabbing}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--panel);padding:5px 8px;border-radius:6px;font-size:12px;display:none;white-space:nowrap;z-index:4}
+.card{position:absolute;right:16px;top:16px;width:330px;max-width:calc(100% - 32px);max-height:calc(100% - 32px);overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:16px;display:none;z-index:3}
+.card h2{font-size:16px;margin:0 28px 2px 0;line-height:1.3}
+.card .meta{color:var(--muted);font-size:13px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.card .x{position:absolute;right:10px;top:8px;border:0;background:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.stat{background:var(--chip);border-radius:8px;padding:8px}
+.stat b{display:block;font-size:17px;font-variant-numeric:tabular-nums}
+.stat span{font-size:11px;color:var(--muted)}
+.card h3{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:14px 0 6px}
+.card ol{margin:0;padding-left:0;list-style:none}
+.card li{display:flex;gap:8px;padding:4px 0;border-bottom:1px solid var(--line);font-size:13px;cursor:pointer}
+.card li:last-child{border-bottom:0}
+.card li span:last-child{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--muted)}
+.card .empty{color:var(--muted);font-size:13px}
+.hint{position:absolute;left:16px;bottom:14px;font-size:12px;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+.zoom{position:absolute;left:16px;top:16px;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
+.zoom button{border:0;background:transparent;color:var(--ink);width:34px;height:34px;font-size:18px;cursor:pointer}
+.zoom button+button{border-top:1px solid var(--line)}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr;grid-template-rows:auto 70vh;height:auto}
+  aside{border-right:0;border-bottom:1px solid var(--line);padding:16px}
+  main{height:70vh}
+  .card{left:16px;right:16px;width:auto;top:auto;bottom:16px;max-height:60%}
+  .hint{display:none}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div>
+      <div class="row"><h1 data-t="baslik"></h1>
+        <div class="lang"><button data-l="tr" class="on">TR</button><button data-l="en">EN</button></div>
+      </div>
+      <div class="sub" data-t="alt"></div>
+    </div>
+    <div>
+      <label class="sec" data-t="ara"></label>
+      <div class="search"><input id="q" autocomplete="off"><div class="sugg" id="sugg"></div></div>
+    </div>
+    <div>
+      <label class="toggle"><input type="checkbox" id="trv"><span data-t="trvurgu"></span></label>
+    </div>
+    <div>
+      <details id="det" open><summary class="sec" data-t="topluluklar"></summary>
+      <div class="comm" id="comm"></div>
+      <div class="links"><a id="all" data-t="tumu"></a><a id="none" data-t="hicbiri"></a></div></details>
+    </div>
+    <div class="legend">
+      <div data-t="boyut"></div>
+      <div><span class="ln" style="background:var(--accent)"></span><span data-t="giden_ok"></span></div>
+      <div><span class="ln" style="background:var(--in)"></span><span data-t="gelen_ok"></span></div>
+    </div>
+    <div class="note" id="note"></div>
+  </aside>
+  <main id="main">
+    <canvas id="cv"></canvas>
+    <div class="zoom"><button id="zin" aria-label="+">+</button><button id="zout" aria-label="−">−</button><button id="zreset" aria-label="reset">⟲</button></div>
+    <div class="tip" id="tip"></div>
+    <div class="card" id="card"></div>
+    <div class="hint" data-t="ipucu"></div>
+  </main>
+</div>
+<script src="d3.v7.min.js"></script>
+<script>
+const V = /*__VERI__*/null;
+const T = {
+  tr:{baslik:"Erasmus+ öğrenci hareketliliği ağı",alt:"",ara:"Kurum ara",yer:"Üniversite adı veya ülke…",
+      trvurgu:"Türk kurumlarını vurgula",topluluklar:"Topluluklar (Leiden)",tumu:"Tümünü seç",hicbiri:"Hiçbirini seçme",
+      boyut:"Daire büyüklüğü = toplam öğrenci (giden + gelen)",giden_ok:"Seçili kurumdan giden",gelen_ok:"Seçili kuruma gelen",
+      ipucu:"Kaydırarak yakınlaş · sürükleyerek gezin · bir kuruma tıkla",giden:"Giden öğrenci",gelen:"Gelen öğrenci",
+      partner:"Partner kurum",prsira:"PageRank sırası",hedefler:"En çok öğrenci gönderdiği",kaynaklar:"En çok öğrenci aldığı",
+      yok:"Bu görünümde yok",topl:"Topluluk",bulunamadi:"Sonuç yok",
+      not:(n,e,p,y)=>`Görünüm: öğrenci hacmine göre en büyük ${n} kurum ve aralarındaki ${e} akış (${y}, yükseköğretim öğrencileri). Bu alt ağ kurum ağındaki toplam akışın %${p}'ini taşır; ${fmt(V.toplam)} kurumun tümü okunaksız olacağı için filtrelendi. Genel görünümde her kurumun en güçlü 6 bağı çizilir. Kaynak: <a href="https://data.europa.eu/data/datasets/erasmus-mobility-raw-data" target="_blank" rel="noopener">data.europa.eu</a> · Müesser İrem Gecici`,
+      alt2:(n)=>`${n} üniversite · 2022 · kurumdan kuruma öğrenci akışları`, sira:(r)=>`${r.toLocaleString("tr-TR")}. / ${V.toplam.toLocaleString("tr-TR")}`},
+  en:{baslik:"Erasmus+ student mobility network",alt:"",ara:"Search institution",yer:"University name or country…",
+      trvurgu:"Highlight Turkish institutions",topluluklar:"Communities (Leiden)",tumu:"Select all",hicbiri:"Select none",
+      boyut:"Circle size = total students (outgoing + incoming)",giden_ok:"Outgoing from selected",gelen_ok:"Incoming to selected",
+      ipucu:"Scroll to zoom · drag to pan · click an institution",giden:"Outgoing students",gelen:"Incoming students",
+      partner:"Partner institutions",prsira:"PageRank rank",hedefler:"Top destinations",kaynaklar:"Top sources",
+      yok:"None in this view",topl:"Community",bulunamadi:"No results",
+      not:(n,e,p,y)=>`View: the ${n} largest institutions by student volume and the ${e} flows among them (${y}, higher-education students). This subnetwork carries ${p}% of all institution-level flows; it is filtered because drawing all ${fmt(V.toplam)} institutions would be unreadable. The overview draws each institution's 6 strongest links. Source: <a href="https://data.europa.eu/data/datasets/erasmus-mobility-raw-data" target="_blank" rel="noopener">data.europa.eu</a> · Müesser İrem Gecici`,
+      alt2:(n)=>`${n} universities · 2022 · institution-to-institution student flows`, sira:(r)=>`${r.toLocaleString("en-US")} / ${V.toplam.toLocaleString("en-US")}`}
+};
+let L = "tr";
+const fmt = v => v.toLocaleString(L === "tr" ? "tr-TR" : "en-US");
+const nodes = V.dugumler, byId = new Map(nodes.map(n => [n.id, n]));
+const comms = new Map(V.topluluklar.map(c => [c.id, c]));
+const visible = new Set(V.topluluklar.map(c => c.id));
+nodes.forEach(n => { n.tot = n.giden + n.gelen; n.out = []; n.inn = []; });
+const edges = V.kenarlar.map(e => ({s: byId.get(e.s), t: byId.get(e.t), w: e.w})).filter(e => e.s && e.t);
+edges.forEach(e => { e.s.out.push(e); e.t.inn.push(e); });
+const omurgaSet = new Set((V.omurga || []).map(([a, b]) => a < b ? a + "\u0000" + b : b + "\u0000" + a));
+const overview = omurgaSet.size ? edges.filter(e => omurgaSet.has(e.s.id < e.t.id ? e.s.id + "\u0000" + e.t.id : e.t.id + "\u0000" + e.s.id)) : edges;
+nodes.forEach(n => { n.out.sort((a,b)=>b.w-a.w); n.inn.sort((a,b)=>b.w-a.w); });
+const maxTot = d3.max(nodes, n => n.tot), maxW = d3.max(edges, e => e.w);
+const rScale = d3.scaleSqrt().domain([0, maxTot]).range([1.6, 15]);
+nodes.forEach(n => n.r = rScale(n.tot));
+const labelOrder = nodes.slice().sort((a,b) => b.tot - a.tot);
+const ulkeAd = k => (V.ulke[k] ? V.ulke[k][L === "tr" ? 0 : 1] : k);
+const commAd = c => (comms.get(c) || {})[L] || "";
+
+const cv = document.getElementById("cv"), ctx = cv.getContext("2d"), main = document.getElementById("main");
+let W = 0, H = 0, dpr = 1, tf = d3.zoomIdentity, sel = null, hov = null, trv = false;
+const xs = d3.extent(nodes, n => n.x), ys = d3.extent(nodes, n => n.y);
+function fit(){
+  const pad = 40, sx = (W - 2*pad) / (xs[1]-xs[0]), sy = (H - 2*pad) / (ys[1]-ys[0]), s = Math.min(sx, sy);
+  nodes.forEach(n => { n.px = pad + (n.x - xs[0]) * s + (W - 2*pad - (xs[1]-xs[0])*s)/2; n.py = pad + (n.y - ys[0]) * s + (H - 2*pad - (ys[1]-ys[0])*s)/2; });
+}
+function resize(){
+  tf = d3.zoomIdentity; if (typeof sel$ !== "undefined") sel$.call(zoom.transform, tf);
+  const r = main.getBoundingClientRect(); W = r.width; H = r.height; dpr = window.devicePixelRatio || 1;
+  cv.width = W * dpr; cv.height = H * dpr; fit(); draw();
+}
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+function isVis(n){ return visible.has(n.topluluk); }
+function neighborSet(n){ const s = new Set([n]); n.out.forEach(e => s.add(e.t)); n.inn.forEach(e => s.add(e.s)); return s; }
+
+function draw(){
+  ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,H);
+  ctx.save(); ctx.translate(tf.x, tf.y); ctx.scale(tf.k, tf.k);
+  const focus = sel || hov, nb = focus ? neighborSet(focus) : null;
+  const dark = css("--panel") !== "#ffffff";
+  // kenarlar
+  ctx.lineCap = "round";
+  if (!focus){
+    ctx.strokeStyle = dark ? "rgba(200,205,215,0.16)" : "rgba(40,50,60,0.13)";
+    for (const e of overview){ if (!isVis(e.s) || !isVis(e.t)) continue;
+      ctx.lineWidth = (0.3 + 2.2 * e.w / maxW) / tf.k * Math.min(tf.k, 2.5);
+      ctx.beginPath(); ctx.moveTo(e.s.px, e.s.py); ctx.lineTo(e.t.px, e.t.py); ctx.stroke(); }
+  } else {
+    for (const [list, col] of [[focus.out, css("--accent")], [focus.inn, css("--in")]]){
+      ctx.strokeStyle = col; ctx.globalAlpha = 0.55;
+      for (const e of list){ const o = e.s === focus ? e.t : e.s; if (!isVis(o)) continue;
+        ctx.lineWidth = (0.6 + 5 * e.w / (focus.out.concat(focus.inn)[0]?.w || 1)) / tf.k;
+        ctx.beginPath(); ctx.moveTo(e.s.px, e.s.py); ctx.lineTo(e.t.px, e.t.py); ctx.stroke(); }
+    }
+    ctx.globalAlpha = 1;
+  }
+  // düğümler
+  for (const n of nodes){ if (!isVis(n)) continue;
+    const dim = (nb && !nb.has(n)) || (trv && n.ulke !== "TR" && !nb);
+    ctx.globalAlpha = dim ? 0.12 : 0.92;
+    ctx.fillStyle = comms.get(n.topluluk).renk;
+    ctx.beginPath(); ctx.arc(n.px, n.py, n.r / Math.sqrt(tf.k), 0, 2*Math.PI); ctx.fill();
+    if (trv && n.ulke === "TR"){ ctx.globalAlpha = 1; ctx.lineWidth = 2 / tf.k; ctx.strokeStyle = css("--ink"); ctx.stroke(); }
+  }
+  ctx.globalAlpha = 1;
+  if (focus){ ctx.lineWidth = 2.5 / tf.k; ctx.strokeStyle = css("--ink"); ctx.beginPath(); ctx.arc(focus.px, focus.py, focus.r / Math.sqrt(tf.k) + 2/tf.k, 0, 2*Math.PI); ctx.stroke(); }
+  // etiketler
+  ctx.font = `${12 / tf.k}px system-ui, sans-serif`; ctx.textBaseline = "middle";
+  const placed = [], limit = Math.round(12 * tf.k * tf.k);
+  let cands = focus ? [focus, ...[...nb].filter(n => n !== focus).sort((a,b)=>b.tot-a.tot).slice(0, 14)]
+            : labelOrder.filter(n => isVis(n) && (!trv || n.ulke === "TR")).slice(0, Math.min(limit, trv ? 40 : 60));
+  for (const n of cands){
+    const txt = n.ad.length > 28 ? n.ad.slice(0, 27) + "…" : n.ad, w = ctx.measureText(txt).width, h = 14 / tf.k;
+    const x = n.px + n.r / Math.sqrt(tf.k) + 3 / tf.k, y = n.py;
+    if (placed.some(p => x < p[0] + p[2] && x + w > p[0] && y - h/2 < p[1] + p[3]/2 && y + h/2 > p[1] - p[3]/2)) continue;
+    placed.push([x, y, w, h]);
+    ctx.lineWidth = 3 / tf.k; ctx.strokeStyle = css("--bg"); ctx.strokeText(txt, x, y);
+    ctx.fillStyle = css("--ink"); ctx.fillText(txt, x, y);
+  }
+  ctx.restore();
+}
+
+// yakınlaştırma
+const zoom = d3.zoom().scaleExtent([0.6, 14]).on("zoom", ev => { tf = ev.transform; draw(); })
+  .on("start", () => cv.classList.add("drag")).on("end", () => cv.classList.remove("drag"));
+const sel$ = d3.select(cv).call(zoom).on("dblclick.zoom", null);
+document.getElementById("zin").onclick = () => sel$.transition().duration(250).call(zoom.scaleBy, 1.6);
+document.getElementById("zout").onclick = () => sel$.transition().duration(250).call(zoom.scaleBy, 1/1.6);
+document.getElementById("zreset").onclick = () => sel$.transition().duration(350).call(zoom.transform, d3.zoomIdentity);
+
+function pick(mx, my){
+  const [x, y] = tf.invert([mx, my]); let best = null, bd = Infinity;
+  for (const n of nodes){ if (!isVis(n)) continue; const d = Math.hypot(n.px - x, n.py - y), r = n.r / Math.sqrt(tf.k) + 4 / tf.k;
+    if (d < r && d < bd){ best = n; bd = d; } }
+  return best;
+}
+const tip = document.getElementById("tip");
+cv.addEventListener("mousemove", ev => {
+  const r = cv.getBoundingClientRect(), n = pick(ev.clientX - r.left, ev.clientY - r.top);
+  if (n !== hov){ hov = n; if (!sel) draw(); }
+  if (n){ tip.style.display = "block"; tip.textContent = `${n.ad} · ${ulkeAd(n.ulke)}`;
+    tip.style.left = Math.min(ev.clientX - r.left + 12, W - tip.offsetWidth - 8) + "px"; tip.style.top = (ev.clientY - r.top + 12) + "px"; cv.style.cursor = "pointer"; }
+  else { tip.style.display = "none"; cv.style.cursor = ""; }
+});
+cv.addEventListener("mouseleave", () => { hov = null; tip.style.display = "none"; if (!sel) draw(); });
+cv.addEventListener("click", ev => { const r = cv.getBoundingClientRect(); select(pick(ev.clientX - r.left, ev.clientY - r.top)); });
+
+const card = document.getElementById("card");
+function select(n, center){
+  sel = n; draw();
+  if (!n){ card.style.display = "none"; return; }
+  if (center){ const k = Math.max(tf.k, 3); sel$.transition().duration(500).call(zoom.transform, d3.zoomIdentity.translate(W/2 - n.px*k, H/2 - n.py*k).scale(k)); }
+  renderCard();
+}
+function liste(arr, key){
+  const items = arr.filter(e => isVis(key === "t" ? e.t : e.s)).slice(0, 5);
+  if (!items.length) return `<div class="empty">${T[L].yok}</div>`;
+  return `<ol>${items.map(e => { const o = key === "t" ? e.t : e.s;
+    return `<li data-id="${encodeURIComponent(o.id)}"><span class="dot" style="background:${comms.get(o.topluluk).renk};margin-top:5px"></span><span>${o.ad} <small style="color:var(--muted)">${o.ulke}</small></span><span>${fmt(e.w)}</span></li>`; }).join("")}</ol>`;
+}
+function renderCard(){
+  const n = sel; if (!n) return; const t = T[L], c = comms.get(n.topluluk);
+  card.innerHTML = `<button class="x" aria-label="close">×</button><h2>${n.ad}</h2>
+    <div class="meta">${ulkeAd(n.ulke)} · <span class="dot" style="background:${c.renk}"></span>${commAd(n.topluluk)}</div>
+    <div class="stats"><div class="stat"><b>${fmt(n.giden)}</b><span>${t.giden}</span></div>
+      <div class="stat"><b>${fmt(n.gelen)}</b><span>${t.gelen}</span></div>
+      <div class="stat"><b>${fmt(n.derece)}</b><span>${t.partner}</span></div></div>
+    <div class="meta">${t.prsira}: <b style="color:var(--ink)">${t.sira(n.pagerank_sira)}</b></div>
+    <h3 style="color:var(--accent)">${t.hedefler}</h3>${liste(n.out, "t")}
+    <h3 style="color:var(--in)">${t.kaynaklar}</h3>${liste(n.inn, "s")}`;
+  card.style.display = "block";
+  card.querySelector(".x").onclick = () => select(null);
+  card.querySelectorAll("li[data-id]").forEach(li => li.onclick = () => select(byId.get(decodeURIComponent(li.dataset.id)), true));
+}
+
+// arama
+const q = document.getElementById("q"), sugg = document.getElementById("sugg");
+const norm = s => s.toLocaleLowerCase("tr").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/ı/g, "i");
+nodes.forEach(n => n.nk = norm(n.ad));
+nodes.forEach(n => n.key = norm(n.ad + " " + n.ulke + " " + (V.ulke[n.ulke] || []).join(" ")));
+let hits = [], act = 0;
+function showSugg(){
+  const v = norm(q.value.trim()); if (!v){ sugg.style.display = "none"; return; }
+  const score = n => (n.nk.startsWith(v) ? 0 : n.nk.split(/[^a-z0-9]+/).some(w => w.startsWith(v)) ? 1 : 2);
+  hits = nodes.filter(n => n.key.includes(v)).sort((a,b) => score(a) - score(b) || b.tot - a.tot).slice(0, 12); act = 0;
+  sugg.innerHTML = hits.length ? hits.map((n,i) => `<div class="${i===0?"act":""}" data-i="${i}"><span class="dot" style="background:${comms.get(n.topluluk).renk}"></span>${n.ad}<small>${n.ulke} · ${fmt(n.tot)}</small></div>`).join("")
+                               : `<div style="color:var(--muted);cursor:default">${T[L].bulunamadi}</div>`;
+  sugg.style.display = "block";
+  sugg.querySelectorAll("[data-i]").forEach(d => d.onmousedown = ev => { ev.preventDefault(); choose(hits[+d.dataset.i]); });
+}
+function choose(n){ if (!n) return; if (!visible.has(n.topluluk)){ visible.add(n.topluluk); renderComms(); }
+  q.value = n.ad; sugg.style.display = "none"; select(n, true); }
+q.addEventListener("input", showSugg);
+q.addEventListener("focus", showSugg);
+q.addEventListener("blur", () => setTimeout(() => sugg.style.display = "none", 120));
+q.addEventListener("keydown", ev => {
+  if (ev.key === "Enter"){ choose(hits[act]); }
+  else if (ev.key === "ArrowDown" || ev.key === "ArrowUp"){ ev.preventDefault(); act = Math.max(0, Math.min(hits.length-1, act + (ev.key === "ArrowDown" ? 1 : -1)));
+    sugg.querySelectorAll("[data-i]").forEach((d,i) => d.classList.toggle("act", i === act)); }
+  else if (ev.key === "Escape"){ sugg.style.display = "none"; q.blur(); }
+});
+
+// topluluk filtresi
+function renderComms(){
+  document.getElementById("comm").innerHTML = V.topluluklar.map(c => `<label><input type="checkbox" data-c="${c.id}" ${visible.has(c.id) ? "checked" : ""}>
+    <span class="dot" style="background:${c.renk}"></span><span>${c[L]}</span><span class="n">${c.n}</span></label>`).join("");
+  document.querySelectorAll("#comm input").forEach(i => i.onchange = () => { const c = +i.dataset.c; i.checked ? visible.add(c) : visible.delete(c);
+    if (sel && !isVis(sel)) select(null); else { draw(); renderCard(); } });
+}
+document.getElementById("all").onclick = () => { V.topluluklar.forEach(c => visible.add(c.id)); renderComms(); draw(); renderCard(); };
+document.getElementById("none").onclick = () => { visible.clear(); renderComms(); select(null); };
+document.getElementById("trv").onchange = ev => { trv = ev.target.checked; draw(); };
+
+// dil
+function lang(l){
+  L = l; document.documentElement.lang = l;
+  document.querySelectorAll("[data-l]").forEach(b => b.classList.toggle("on", b.dataset.l === l));
+  document.querySelectorAll("[data-t]").forEach(el => { const v = T[l][el.dataset.t]; if (typeof v === "string") el.textContent = v; });
+  document.querySelector(".sub").textContent = T[l].alt2(fmt(nodes.length));
+  q.placeholder = T[l].yer; document.title = T[l].baslik;
+  document.getElementById("note").innerHTML = T[l].not(fmt(nodes.length), fmt(edges.length), (100 * V.pay).toFixed(1).replace(".", l === "tr" ? "," : "."), V.yil);
+  renderComms(); renderCard(); draw();
+}
+document.querySelectorAll("[data-l]").forEach(b => b.onclick = () => lang(b.dataset.l));
+window.addEventListener("resize", resize);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", draw);
+try { const p = new URLSearchParams(location.search).get("lang"); if (p === "en") L = "en"; } catch(e) {}
+if (matchMedia("(max-width:760px)").matches) document.getElementById("det").open = false;
+resize(); lang(L);
+</script>
+</body>
+</html>

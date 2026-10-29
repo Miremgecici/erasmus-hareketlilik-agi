@@ -1,0 +1,42 @@
+{
+ "0": {
+  "tr": "Klasik araştırma üniversiteleri",
+  "en": "Classic research universities",
+  "aciklama": "Bologna, Complutense, Charles, KU Leuven, Gent, LMU, Viyana, Varşova; TR: İstanbul Ü., Bilgi, Sabancı, Galatasaray, MEF"
+ },
+ "1": {
+  "tr": "Akdeniz ekseni: İspanya–İtalya devlet üniversiteleri",
+  "en": "Mediterranean axis: Spanish–Italian public universities",
+  "aciklama": "Valencia, Granada, Padova, Sevilla, Torino, Coimbra, Porto; TR: Ege, Ankara, Kocaeli, Pamukkale, İstanbul-Cerrahpaşa"
+ },
+ "2": {
+  "tr": "Uygulamalı bilimler ve özel üniversiteler",
+  "en": "Universities of applied sciences and private universities",
+  "aciklama": "Fontys, HvA, TU Dublin, Thomas More, Metropolia, IPL; TR: Bahçeşehir, İzmir Ekonomi, Kadir Has, Özyeğin, Yeditepe"
+ },
+ "3": {
+  "tr": "Teknik üniversiteler",
+  "en": "Technical universities",
+  "aciklama": "PoliMi, TUM, NTNU, UPV, UPC, RWTH Aachen, Aalto, KTH, BME; TR: YTÜ, İTÜ, ODTÜ, Boğaziçi"
+ },
+ "4": {
+  "tr": "Sanat, müzik ve tasarım okulları",
+  "en": "Art, music and design schools",
+  "aciklama": "Ljubljana, Zagreb, Uniarts Helsinki, LUCA, AMU Prag, Bologna Güzel Sanatlar, LMTA; TR: Dokuz Eylül, Mimar Sinan GSÜ"
+ },
+ "5": {
+  "tr": "Yunanistan–Kıbrıs bağlantıları",
+  "en": "Greece–Cyprus links",
+  "aciklama": "Selanik Aristoteles, Girit, Kıbrıs Ü., Passau, Caen; TR: Harran, Heybeliada Ruhban Okulu"
+ },
+ "6": {
+  "tr": "Yaşam bilimleri ve tarım üniversiteleri",
+  "en": "Life-science and agricultural universities",
+  "aciklama": "Wageningen, CZU Prag, BOKU, SGGW, NMBU, SLU, Mendel; TR: Gebze Teknik, Adıyaman, Sinop"
+ },
+ "7": {
+  "tr": "Sağlık bilimleri ve küçük kolejler",
+  "en": "Health sciences and small colleges",
+  "aciklama": "Patras, Yanya, Karolinska, Tartu Sağlık Koleji; TR: Artvin Çoruh, Kapadokya, Gazi"
+ }
+}

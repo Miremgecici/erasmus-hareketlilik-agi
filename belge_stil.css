@@ -1,0 +1,27 @@
+@page { size: A4; margin: 18mm 17mm 18mm 17mm; @bottom-center { content: counter(page); } }
+:root { --ink:#1d232b; --muted:#5f6670; --line:#dcdad5; --accent:#c0392b; --in:#2471a3; --chip:#f3f2ef; }
+* { box-sizing: border-box; }
+body { font-family: "DejaVu Serif", Georgia, serif; color: var(--ink); font-size: 10.1pt; line-height: 1.45; margin: 0; }
+h1, h2, h3, .sans, table, figcaption, .kunye { font-family: "DejaVu Sans", "Segoe UI", Arial, sans-serif; }
+h1 { font-size: 20pt; line-height: 1.2; margin: 0 0 4mm; }
+h2 { font-size: 13pt; margin: 7mm 0 2.5mm; padding-bottom: 1mm; border-bottom: 1.2px solid var(--ink); break-after: avoid; }
+h3 { font-size: 10.8pt; margin: 4.5mm 0 1.5mm; break-after: avoid; }
+p { margin: 0 0 2.4mm; text-align: justify; hyphens: auto; }
+.kunye { font-size: 9pt; color: var(--muted); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 2.5mm 0; margin-bottom: 4mm; display: flex; flex-wrap: wrap; gap: 1mm 6mm; }
+.ozet { background: var(--chip); border-left: 3px solid var(--accent); padding: 3mm 4mm; margin: 0 0 4mm; font-size: 10pt; }
+.ozet p { margin: 0 0 1.5mm; }
+table { border-collapse: collapse; width: 100%; font-size: 8.6pt; margin: 2mm 0 3.5mm; break-inside: avoid; }
+th, td { border-bottom: 1px solid var(--line); padding: 1.2mm 1.8mm; text-align: left; vertical-align: top; }
+th { border-bottom: 1.3px solid var(--ink); font-weight: 700; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr.vurgu td { background: #fbebeb; font-weight: 700; }
+figure { margin: 3mm 0 4mm; break-inside: avoid; }
+figure img { width: 100%; display: block; }
+figcaption { font-size: 8.4pt; color: var(--muted); margin-top: 1.5mm; }
+.iki { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+ul, ol { margin: 0 0 2.4mm; padding-left: 5mm; }
+li { margin-bottom: 1mm; }
+.kucuk { font-size: 8.6pt; color: var(--muted); }
+.formul { font-family: "DejaVu Sans Mono", monospace; font-size: 9pt; background: var(--chip); padding: 2mm 3mm; margin: 1.5mm 0 3mm; border-radius: 1mm; }
+.kaynak p { text-align: left; padding-left: 6mm; text-indent: -6mm; font-size: 9pt; margin-bottom: 1.5mm; }
+.sayfa-kir { break-before: page; }

@@ -1,0 +1,1178 @@
+{
+ "veri": {
+  "ham_satir": 867767,
+  "ogrenci_satir": 349634,
+  "ogrenci": 365590,
+  "yeni_donem_ogrenci": 268984,
+  "eski_donem_ogrenci": 96606,
+  "kurum_agi_ogrenci": 193465
+ },
+ "temel_kurum": {
+  "dugum": 13167,
+  "kenar": 69839,
+  "yogunluk": 0.0004028629475354293,
+  "zayif_bilesen": 275,
+  "en_buyuk_zayif": 12286,
+  "guclu_bilesen": 11657,
+  "en_buyuk_guclu": 1508,
+  "ort_en_kisa_yol": 3.6697642653642655,
+  "cap": 12,
+  "ort_kumelenme": 0.048804979369021714,
+  "gecislilik": 0.1562143169398395,
+  "assortativity_yonsuz": -0.11864740493347704,
+  "assortativity_out_in": -0.08875663414988456,
+  "ort_derece": 8.883420672894356
+ },
+ "temel_ulke": {
+  "dugum": 176,
+  "kenar": 3060,
+  "yogunluk": 0.09935064935064936,
+  "zayif_bilesen": 1,
+  "en_buyuk_zayif": 176,
+  "guclu_bilesen": 44,
+  "en_buyuk_guclu": 133,
+  "ort_en_kisa_yol": 1.9781818181818183,
+  "cap": 3,
+  "ort_kumelenme": 0.7730476773330456,
+  "gecislilik": 0.43822000203894385,
+  "assortativity_yonsuz": -0.6327693844194938,
+  "assortativity_out_in": -0.593249256967307,
+  "ort_derece": 22.625
+ },
+ "derece_dagilimi": {
+  "xmin": 149.0,
+  "alpha": 3.4073943959575406,
+  "KS": 0.06116821380966164,
+  "kuyruk_n": 190,
+  "R_lognormal": -3.30687110204223,
+  "p_lognormal": 0.11593603993868705,
+  "R_ustel": -1.7602590763255392,
+  "p_ustel": 0.6641338831627357,
+  "lognormal_mu": 4.328347731553039,
+  "lognormal_sigma": 0.7585308211669609,
+  "max_derece": 811,
+  "medyan_derece": 1.0,
+  "derece1_orani": 0.7600060757955495
+ },
+ "merkeziyet": {
+  "ilk10": {
+   "derece": [
+    [
+     "IT | UNIBO",
+     811.0
+    ],
+    [
+     "SI | UL",
+     719.0
+    ],
+    [
+     "ES | UCM",
+     586.0
+    ],
+    [
+     "ES | UVEG",
+     579.0
+    ],
+    [
+     "CZ | CU",
+     530.0
+    ],
+    [
+     "EL | ARISTOTLE UNIVERSITY OF THESSALONIKI",
+     518.0
+    ],
+    [
+     "IT | UNIFI",
+     500.0
+    ],
+    [
+     "PT | ULISBOA",
+     492.0
+    ],
+    [
+     "ES | UGR",
+     481.0
+    ],
+    [
+     "HR | UNIVERSITY OF ZAGREB UNIZG",
+     471.0
+    ]
+   ],
+   "gelen_ogrenci": [
+    [
+     "IT | UNIBO",
+     2353.0
+    ],
+    [
+     "PT | ULISBOA",
+     2225.0
+    ],
+    [
+     "ES | UVEG",
+     2096.0
+    ],
+    [
+     "ES | UGR",
+     1809.0
+    ],
+    [
+     "CZ | CU",
+     1567.0
+    ],
+    [
+     "NO | NTNU",
+     1547.0
+    ],
+    [
+     "IT | POLIMI",
+     1488.0
+    ],
+    [
+     "IT | UNIPD",
+     1474.0
+    ],
+    [
+     "SI | UL",
+     1362.0
+    ],
+    [
+     "ES | UPV",
+     1267.0
+    ]
+   ],
+   "giden_ogrenci": [
+    [
+     "IT | UNIBO",
+     2932.0
+    ],
+    [
+     "ES | UVEG",
+     1911.0
+    ],
+    [
+     "ES | UCM",
+     1769.0
+    ],
+    [
+     "DE | TUM",
+     1705.0
+    ],
+    [
+     "IT | UNIPD",
+     1669.0
+    ],
+    [
+     "IT | POLIMI",
+     1643.0
+    ],
+    [
+     "ES | UGR",
+     1437.0
+    ],
+    [
+     "ES | USE",
+     1386.0
+    ],
+    [
+     "CZ | CU",
+     1307.0
+    ],
+    [
+     "BE | KU LEUVEN",
+     1295.0
+    ]
+   ],
+   "betweenness": [
+    [
+     "IT | UNIBO",
+     0.007585141846198925
+    ],
+    [
+     "SI | UL",
+     0.0059522513229881896
+    ],
+    [
+     "ES | UVEG",
+     0.005197650536428524
+    ],
+    [
+     "ES | UGR",
+     0.0048966307196651356
+    ],
+    [
+     "ES | UCM",
+     0.004238254642086126
+    ],
+    [
+     "PT | ULISBOA",
+     0.0037677931342570948
+    ],
+    [
+     "CZ | CU",
+     0.003559920249745643
+    ],
+    [
+     "HR | UNIVERSITY OF ZAGREB UNIZG",
+     0.0035141217386355076
+    ],
+    [
+     "EL | ARISTOTLE UNIVERSITY OF THESSALONIKI",
+     0.0033827331937032004
+    ],
+    [
+     "ES | UPV/EHU",
+     0.0029589362295053792
+    ]
+   ],
+   "closeness": [
+    [
+     "IT | UNIBO",
+     0.4298610868119948
+    ],
+    [
+     "SI | UL",
+     0.42930528375733856
+    ],
+    [
+     "ES | UCM",
+     0.42730434782608695
+    ],
+    [
+     "PT | ULISBOA",
+     0.4264144394307532
+    ],
+    [
+     "ES | UGR",
+     0.4246603754018459
+    ],
+    [
+     "ES | UVEG",
+     0.4231100396073704
+    ],
+    [
+     "CZ | CU",
+     0.42190397692149184
+    ],
+    [
+     "ES | USE",
+     0.4191116266375546
+    ],
+    [
+     "IT | UNIFI",
+     0.41437582217425034
+    ],
+    [
+     "BE | KU LEUVEN",
+     0.41406855640567597
+    ]
+   ],
+   "pagerank": [
+    [
+     "IT | UNIBO",
+     0.003139094128074381
+    ],
+    [
+     "PT | ULISBOA",
+     0.002959834794420581
+    ],
+    [
+     "ES | UVEG",
+     0.0024880020489722616
+    ],
+    [
+     "IT | POLIMI",
+     0.002362377774083055
+    ],
+    [
+     "ES | UGR",
+     0.002272683635194087
+    ],
+    [
+     "SI | UL",
+     0.002156827378218166
+    ],
+    [
+     "ES | UPV",
+     0.00203899009242555
+    ],
+    [
+     "IT | UNIPD",
+     0.001994960293400333
+    ],
+    [
+     "NO | NTNU",
+     0.0019835490953896816
+    ],
+    [
+     "CZ | CU",
+     0.001981416999054518
+    ]
+   ]
+  },
+  "spearman": {
+   "derece": {
+    "derece": 1.0,
+    "gelen_ogrenci": 0.781,
+    "giden_ogrenci": 0.845,
+    "betweenness": 0.763,
+    "closeness": 0.913,
+    "pagerank": 0.726
+   },
+   "gelen_ogrenci": {
+    "derece": 0.781,
+    "gelen_ogrenci": 1.0,
+    "giden_ogrenci": 0.512,
+    "betweenness": 0.586,
+    "closeness": 0.792,
+    "pagerank": 0.909
+   },
+   "giden_ogrenci": {
+    "derece": 0.845,
+    "gelen_ogrenci": 0.512,
+    "giden_ogrenci": 1.0,
+    "betweenness": 0.808,
+    "closeness": 0.749,
+    "pagerank": 0.486
+   },
+   "betweenness": {
+    "derece": 0.763,
+    "gelen_ogrenci": 0.586,
+    "giden_ogrenci": 0.808,
+    "betweenness": 1.0,
+    "closeness": 0.629,
+    "pagerank": 0.626
+   },
+   "closeness": {
+    "derece": 0.913,
+    "gelen_ogrenci": 0.792,
+    "giden_ogrenci": 0.749,
+    "betweenness": 0.629,
+    "closeness": 1.0,
+    "pagerank": 0.655
+   },
+   "pagerank": {
+    "derece": 0.726,
+    "gelen_ogrenci": 0.909,
+    "giden_ogrenci": 0.486,
+    "betweenness": 0.626,
+    "closeness": 0.655,
+    "pagerank": 1.0
+   }
+  },
+  "tr_kurum_sayisi": 294,
+  "tr_ilk5_pagerank": [
+   [
+    "TR | MU",
+    426,
+    297,
+    172
+   ],
+   [
+    "TR | BAHUN",
+    101,
+    116,
+    194
+   ],
+   [
+    "TR | BILGI",
+    82,
+    213,
+    265
+   ],
+   [
+    "TR | ITU",
+    270,
+    245,
+    285
+   ],
+   [
+    "TR | ISTANBUL UNIVERSITY IU",
+    286,
+    233,
+    339
+   ]
+  ]
+ },
+ "ulke_tr": {
+  "giden": 16214.0,
+  "gelen": 6045.0,
+  "derece": 89.0,
+  "betweenness": 0.028756109013199114,
+  "closeness": 0.6704980842911877,
+  "pagerank": 0.015064953386178285,
+  "giden_sira": 6.0,
+  "gelen_sira": 19.0,
+  "pagerank_sira": 18.0,
+  "betweenness_sira": 10.0,
+  "closeness_sira": 10.0,
+  "derece_sira": 10.0
+ },
+ "topluluk": {
+  "louvain": {
+   "Q_ort": 0.326189254774328,
+   "Q_sd": 0.0016078774806526567,
+   "topluluk_sayisi": 319,
+   "NMI_ort": 0.8023463791790884,
+   "ARI_ort": 0.7053984952155505
+  },
+  "leiden": {
+   "Q_ort": 0.33131396235029764,
+   "Q_sd": 0.0007221187875709707,
+   "topluluk_sayisi": 321,
+   "NMI_ort": 0.8416968498408545,
+   "ARI_ort": 0.7832236413708077
+  },
+  "louvain_vs_leiden": {
+   "NMI": 0.8262857829992603,
+   "ARI": 0.7522845031907174
+  }
+ },
+ "topluluk_icerik": [
+  {
+   "no": 0,
+   "kurum": 2545,
+   "ogrenci_hacmi": 121930,
+   "ulkeler": [
+    [
+     "FR",
+     14.2
+    ],
+    [
+     "DE",
+     14.1
+    ],
+    [
+     "IT",
+     12.4
+    ],
+    [
+     "ES",
+     11.9
+    ],
+    [
+     "BE",
+     6.4
+    ]
+   ],
+   "kurumlar": [
+    "IT | UNIBO",
+    "ES | UCM",
+    "CZ | CU",
+    "BE | KU LEUVEN",
+    "BE | UGENT"
+   ]
+  },
+  {
+   "no": 1,
+   "kurum": 2247,
+   "ogrenci_hacmi": 112496,
+   "ulkeler": [
+    [
+     "ES",
+     29.5
+    ],
+    [
+     "IT",
+     23.8
+    ],
+    [
+     "PL",
+     7.1
+    ],
+    [
+     "PT",
+     7.0
+    ],
+    [
+     "FR",
+     6.8
+    ]
+   ],
+   "kurumlar": [
+    "ES | UVEG",
+    "ES | UGR",
+    "IT | UNIPD",
+    "ES | USE",
+    "IT | UNITO"
+   ]
+  },
+  {
+   "no": 2,
+   "kurum": 2114,
+   "ogrenci_hacmi": 48516,
+   "ulkeler": [
+    [
+     "DE",
+     15.9
+    ],
+    [
+     "ES",
+     13.0
+    ],
+    [
+     "NL",
+     12.7
+    ],
+    [
+     "BE",
+     9.1
+    ],
+    [
+     "FI",
+     7.1
+    ]
+   ],
+   "kurumlar": [
+    "ES | URJC",
+    "NL | FONTYS",
+    "NL | HVA",
+    "IE | TU DUBLIN",
+    "IT | LIBERA UNIVERSITA MARIA SS ASSUNTA"
+   ]
+  },
+  {
+   "no": 3,
+   "kurum": 1422,
+   "ogrenci_hacmi": 59022,
+   "ulkeler": [
+    [
+     "DE",
+     18.1
+    ],
+    [
+     "FR",
+     16.3
+    ],
+    [
+     "ES",
+     10.7
+    ],
+    [
+     "IT",
+     8.4
+    ],
+    [
+     "PT",
+     5.8
+    ]
+   ],
+   "kurumlar": [
+    "IT | POLIMI",
+    "PT | ULISBOA",
+    "DE | TUM",
+    "NO | NTNU",
+    "ES | UPV"
+   ]
+  },
+  {
+   "no": 4,
+   "kurum": 1117,
+   "ogrenci_hacmi": 13564,
+   "ulkeler": [
+    [
+     "SI",
+     19.5
+    ],
+    [
+     "HR",
+     12.0
+    ],
+    [
+     "FR",
+     9.2
+    ],
+    [
+     "DE",
+     8.3
+    ],
+    [
+     "IT",
+     6.6
+    ]
+   ],
+   "kurumlar": [
+    "SI | UL",
+    "HR | UNIVERSITY OF ZAGREB UNIZG",
+    "FR | USMB",
+    "DE | UNI KASSEL",
+    "TR | DOKUZ EYLUL UNIVERSITY OF IZMIR"
+   ]
+  },
+  {
+   "no": 5,
+   "kurum": 508,
+   "ogrenci_hacmi": 4094,
+   "ulkeler": [
+    [
+     "EL",
+     45.4
+    ],
+    [
+     "DE",
+     16.9
+    ],
+    [
+     "FR",
+     11.8
+    ],
+    [
+     "CY",
+     6.9
+    ],
+    [
+     "ES",
+     3.6
+    ]
+   ],
+   "kurumlar": [
+    "EL | ARISTOTLE UNIVERSITY OF THESSALONIKI",
+    "DE | UNIVERSITY OF PASSAU",
+    "FR | UNICAEN",
+    "EL | UNIVERSITY OF CRETE",
+    "CY | UCY"
+   ]
+  }
+ ],
+ "tr_topluluklar": [
+  [
+   1,
+   99
+  ],
+  [
+   2,
+   46
+  ],
+  [
+   0,
+   38
+  ],
+  [
+   3,
+   17
+  ],
+  [
+   11,
+   13
+  ]
+ ],
+ "topluluk_adlari": [
+  {
+   "no": 0,
+   "ad": "Klasik araştırma üniversiteleri",
+   "kurum": 2545,
+   "ogrenci_payi_%": 31.5,
+   "TR_kurum": 38,
+   "ornekler": "Bologna, Complutense, Charles, KU Leuven, Gent, LMU, Viyana, Varşova; TR: İstanbul Ü., Bilgi, Sabancı, Galatasaray, MEF"
+  },
+  {
+   "no": 1,
+   "ad": "Akdeniz ekseni: İspanya–İtalya devlet üniversiteleri",
+   "kurum": 2247,
+   "ogrenci_payi_%": 29.1,
+   "TR_kurum": 99,
+   "ornekler": "Valencia, Granada, Padova, Sevilla, Torino, Coimbra, Porto; TR: Ege, Ankara, Kocaeli, Pamukkale, İstanbul-Cerrahpaşa"
+  },
+  {
+   "no": 2,
+   "ad": "Uygulamalı bilimler ve özel üniversiteler",
+   "kurum": 2114,
+   "ogrenci_payi_%": 12.5,
+   "TR_kurum": 46,
+   "ornekler": "Fontys, HvA, TU Dublin, Thomas More, Metropolia, IPL; TR: Bahçeşehir, İzmir Ekonomi, Kadir Has, Özyeğin, Yeditepe"
+  },
+  {
+   "no": 3,
+   "ad": "Teknik üniversiteler",
+   "kurum": 1422,
+   "ogrenci_payi_%": 15.3,
+   "TR_kurum": 17,
+   "ornekler": "PoliMi, TUM, NTNU, UPV, UPC, RWTH Aachen, Aalto, KTH, BME; TR: YTÜ, İTÜ, ODTÜ, Boğaziçi"
+  },
+  {
+   "no": 4,
+   "ad": "Sanat, müzik ve tasarım okulları",
+   "kurum": 1117,
+   "ogrenci_payi_%": 3.5,
+   "TR_kurum": 11,
+   "ornekler": "Ljubljana, Zagreb, Uniarts Helsinki, LUCA, AMU Prag, Bologna Güzel Sanatlar, LMTA; TR: Dokuz Eylül, Mimar Sinan GSÜ"
+  },
+  {
+   "no": 5,
+   "ad": "Yunanistan–Kıbrıs bağlantıları",
+   "kurum": 508,
+   "ogrenci_payi_%": 1.1,
+   "TR_kurum": 13,
+   "ornekler": "Selanik Aristoteles, Girit, Kıbrıs Ü., Passau, Caen; TR: Harran, Heybeliada Ruhban Okulu"
+  },
+  {
+   "no": 6,
+   "ad": "Yaşam bilimleri ve tarım üniversiteleri",
+   "kurum": 493,
+   "ogrenci_payi_%": 2.2,
+   "TR_kurum": 10,
+   "ornekler": "Wageningen, CZU Prag, BOKU, SGGW, NMBU, SLU, Mendel; TR: Gebze Teknik, Adıyaman, Sinop"
+  },
+  {
+   "no": 7,
+   "ad": "Sağlık bilimleri ve küçük kolejler",
+   "kurum": 344,
+   "ogrenci_payi_%": 0.4,
+   "TR_kurum": 8,
+   "ornekler": "Patras, Yanya, Karolinska, Tartu Sağlık Koleji; TR: Artvin Çoruh, Kapadokya, Gazi"
+  }
+ ],
+ "null_model": {
+  "kumelenme": {
+   "gozlenen": 0.048804979369021714,
+   "null_ort": 0.031735416397037676,
+   "null_sd": 0.0009181196945124665,
+   "z": 18.59187105342316
+  },
+  "gecislilik": {
+   "gozlenen": 0.1562143169398395,
+   "null_ort": 0.10855514542707267,
+   "null_sd": 0.0008917779726490341,
+   "z": 53.442866918090445
+  },
+  "ort_yol": {
+   "gozlenen": 3.739049247049247,
+   "null_ort": 3.6572025402651223,
+   "null_sd": 0.04000402940236466,
+   "z": 2.0459615695434583
+  },
+  "modulerlik": {
+   "gozlenen": 0.3461226343674897,
+   "null_ort": 0.26289835495169234,
+   "null_sd": 0.0007726015972279894,
+   "z": 107.71952803928573
+  },
+  "karsiliklilik": {
+   "gozlenen": 0.3251764773264222,
+   "null_ort": 0.08220085184744877,
+   "null_sd": 0.0014201561064198273,
+   "z": 171.09078669633578
+  }
+ },
+ "karsiliklilik": {
+  "kurum_agirliksiz": 0.3251764773264222,
+  "kurum_agirlikli": 0.3180420231049544,
+  "ulke_agirliksiz": 0.6986928104575163,
+  "ulke_agirlikli": 0.6965339898782656
+ },
+ "tr_denge": {
+  "giden": 16214,
+  "gelen": 6045,
+  "oran": 2.6822167080231596,
+  "dengesizlik": 0.45684891504559955,
+  "sira_34_ulke": 1,
+  "net_giden": 10169
+ },
+ "dengesizlik_tablosu": [
+  {
+   "ulke": "TR",
+   "giden": 16214,
+   "gelen": 6045,
+   "net_giden": 10169,
+   "dengesizlik": 0.457
+  },
+  {
+   "ulke": "RO",
+   "giden": 7561,
+   "gelen": 3732,
+   "net_giden": 3829,
+   "dengesizlik": 0.339
+  },
+  {
+   "ulke": "FR",
+   "giden": 53843,
+   "gelen": 32618,
+   "net_giden": 21225,
+   "dengesizlik": 0.245
+  },
+  {
+   "ulke": "SK",
+   "giden": 3490,
+   "gelen": 2304,
+   "net_giden": 1186,
+   "dengesizlik": 0.205
+  },
+  {
+   "ulke": "DE",
+   "giden": 48949,
+   "gelen": 34996,
+   "net_giden": 13953,
+   "dengesizlik": 0.166
+  },
+  {
+   "ulke": "BG",
+   "giden": 2020,
+   "gelen": 1573,
+   "net_giden": 447,
+   "dengesizlik": 0.124
+  },
+  {
+   "ulke": "MK",
+   "giden": 436,
+   "gelen": 372,
+   "net_giden": 64,
+   "dengesizlik": 0.079
+  },
+  {
+   "ulke": "IT",
+   "giden": 43967,
+   "gelen": 37589,
+   "net_giden": 6378,
+   "dengesizlik": 0.078
+  },
+  {
+   "ulke": "RS",
+   "giden": 482,
+   "gelen": 417,
+   "net_giden": 65,
+   "dengesizlik": 0.072
+  },
+  {
+   "ulke": "NL",
+   "giden": 18237,
+   "gelen": 16105,
+   "net_giden": 2132,
+   "dengesizlik": 0.062
+  },
+  {
+   "ulke": "LV",
+   "giden": 2046,
+   "gelen": 1990,
+   "net_giden": 56,
+   "dengesizlik": 0.014
+  },
+  {
+   "ulke": "EL",
+   "giden": 6111,
+   "gelen": 6215,
+   "net_giden": -104,
+   "dengesizlik": -0.008
+  },
+  {
+   "ulke": "LT",
+   "giden": 3540,
+   "gelen": 3682,
+   "net_giden": -142,
+   "dengesizlik": -0.02
+  },
+  {
+   "ulke": "EE",
+   "giden": 1574,
+   "gelen": 1845,
+   "net_giden": -271,
+   "dengesizlik": -0.079
+  },
+  {
+   "ulke": "PL",
+   "giden": 13000,
+   "gelen": 15388,
+   "net_giden": -2388,
+   "dengesizlik": -0.084
+  },
+  {
+   "ulke": "BE",
+   "giden": 12408,
+   "gelen": 14794,
+   "net_giden": -2386,
+   "dengesizlik": -0.088
+  },
+  {
+   "ulke": "ES",
+   "giden": 48279,
+   "gelen": 57699,
+   "net_giden": -9420,
+   "dengesizlik": -0.089
+  },
+  {
+   "ulke": "AT",
+   "giden": 7776,
+   "gelen": 10162,
+   "net_giden": -2386,
+   "dengesizlik": -0.133
+  },
+  {
+   "ulke": "HR",
+   "giden": 2291,
+   "gelen": 3077,
+   "net_giden": -786,
+   "dengesizlik": -0.146
+  },
+  {
+   "ulke": "CZ",
+   "giden": 7770,
+   "gelen": 10851,
+   "net_giden": -3081,
+   "dengesizlik": -0.165
+  },
+  {
+   "ulke": "SI",
+   "giden": 2281,
+   "gelen": 3295,
+   "net_giden": -1014,
+   "dengesizlik": -0.182
+  },
+  {
+   "ulke": "HU",
+   "giden": 4536,
+   "gelen": 6654,
+   "net_giden": -2118,
+   "dengesizlik": -0.189
+  },
+  {
+   "ulke": "DK",
+   "giden": 4666,
+   "gelen": 6956,
+   "net_giden": -2290,
+   "dengesizlik": -0.197
+  },
+  {
+   "ulke": "PT",
+   "giden": 10440,
+   "gelen": 18596,
+   "net_giden": -8156,
+   "dengesizlik": -0.281
+  },
+  {
+   "ulke": "FI",
+   "giden": 5244,
+   "gelen": 9559,
+   "net_giden": -4315,
+   "dengesizlik": -0.291
+  },
+  {
+   "ulke": "IE",
+   "giden": 4660,
+   "gelen": 8591,
+   "net_giden": -3931,
+   "dengesizlik": -0.297
+  },
+  {
+   "ulke": "UK",
+   "giden": 7757,
+   "gelen": 14433,
+   "net_giden": -6676,
+   "dengesizlik": -0.301
+  },
+  {
+   "ulke": "NO",
+   "giden": 4775,
+   "gelen": 9555,
+   "net_giden": -4780,
+   "dengesizlik": -0.334
+  },
+  {
+   "ulke": "CY",
+   "giden": 666,
+   "gelen": 1393,
+   "net_giden": -727,
+   "dengesizlik": -0.353
+  },
+  {
+   "ulke": "SE",
+   "giden": 5525,
+   "gelen": 11988,
+   "net_giden": -6463,
+   "dengesizlik": -0.369
+  },
+  {
+   "ulke": "IS",
+   "giden": 407,
+   "gelen": 1104,
+   "net_giden": -697,
+   "dengesizlik": -0.461
+  },
+  {
+   "ulke": "LU",
+   "giden": 555,
+   "gelen": 1808,
+   "net_giden": -1253,
+   "dengesizlik": -0.53
+  },
+  {
+   "ulke": "LI",
+   "giden": 22,
+   "gelen": 103,
+   "net_giden": -81,
+   "dengesizlik": -0.648
+  },
+  {
+   "ulke": "MT",
+   "giden": 511,
+   "gelen": 2945,
+   "net_giden": -2434,
+   "dengesizlik": -0.704
+  }
+ ],
+ "tr_partnerler": [
+  {
+   "ulke": "DE",
+   "giden": 3396,
+   "gelen": 1554,
+   "toplam": 4950
+  },
+  {
+   "ulke": "PL",
+   "giden": 3589,
+   "gelen": 398,
+   "toplam": 3987
+  },
+  {
+   "ulke": "IT",
+   "giden": 1487,
+   "gelen": 360,
+   "toplam": 1847
+  },
+  {
+   "ulke": "ES",
+   "giden": 1111,
+   "gelen": 373,
+   "toplam": 1484
+  },
+  {
+   "ulke": "FR",
+   "giden": 746,
+   "gelen": 714,
+   "toplam": 1460
+  },
+  {
+   "ulke": "RO",
+   "giden": 477,
+   "gelen": 540,
+   "toplam": 1017
+  },
+  {
+   "ulke": "NL",
+   "giden": 658,
+   "gelen": 333,
+   "toplam": 991
+  },
+  {
+   "ulke": "PT",
+   "giden": 678,
+   "gelen": 88,
+   "toplam": 766
+  },
+  {
+   "ulke": "CZ",
+   "giden": 615,
+   "gelen": 97,
+   "toplam": 712
+  },
+  {
+   "ulke": "LT",
+   "giden": 418,
+   "gelen": 118,
+   "toplam": 536
+  }
+ ],
+ "cekim": {
+  "temel": {
+   "katsayi": {
+    "sabit": -17.6194,
+    "ln_nufus_i": 0.8763,
+    "ln_nufus_j": 0.6516,
+    "ln_mesafe": -0.2639
+   },
+   "se": {
+    "sabit": 1.4496,
+    "ln_nufus_i": 0.0437,
+    "ln_nufus_j": 0.0436,
+    "ln_mesafe": 0.081
+   },
+   "z": {
+    "sabit": -12.15,
+    "ln_nufus_i": 20.04,
+    "ln_nufus_j": 14.93,
+    "ln_mesafe": -3.26
+   },
+   "pseudo_R2": 0.6659
+  },
+  "tr_kuklali": {
+   "katsayi": {
+    "sabit": -21.6255,
+    "ln_nufus_i": 0.9448,
+    "ln_nufus_j": 0.7246,
+    "ln_mesafe": -0.0146,
+    "tr_kaynak": -1.188,
+    "tr_hedef": -1.9928
+   },
+   "se": {
+    "sabit": 1.6867,
+    "ln_nufus_i": 0.0463,
+    "ln_nufus_j": 0.0451,
+    "ln_mesafe": 0.0936,
+    "tr_kaynak": 0.2559,
+    "tr_hedef": 0.2421
+   },
+   "z": {
+    "sabit": -12.82,
+    "ln_nufus_i": 20.42,
+    "ln_nufus_j": 16.07,
+    "ln_mesafe": -0.16,
+    "tr_kaynak": -4.64,
+    "tr_hedef": -8.23
+   },
+   "pseudo_R2": 0.7216
+  },
+  "ols_log": {
+   "katsayi": {
+    "sabit": -15.8007,
+    "ln_nufus_i": 0.7642,
+    "ln_nufus_j": 0.6118,
+    "ln_mesafe": -0.2665
+   },
+   "se": {
+    "sabit": 0.8174,
+    "ln_nufus_i": 0.0294,
+    "ln_nufus_j": 0.0255,
+    "ln_mesafe": 0.0627
+   },
+   "R2": 0.5234,
+   "n": 1017
+  },
+  "ornek": {
+   "ulke": 34,
+   "cift": 1122,
+   "sifir_akis": 105,
+   "ogrenci": 344923
+  },
+  "tr_beklenen": {
+   "giden_gercek": 16037,
+   "giden_beklenen": 36569.37545959704,
+   "gelen_gercek": 5603,
+   "gelen_beklenen": 27606.10140457673
+  }
+ },
+ "yillar": [
+  {
+   "yil": 2022,
+   "ogrenci": 365590,
+   "ulke": 176,
+   "ulke_kenar": 3060,
+   "ulke_yogunluk": 0.09935064935064936,
+   "karsiliklilik_ulke": 0.6986928104575163,
+   "karsiliklilik_ulke_agirlikli": 0.6965339898782656,
+   "tr_giden": 16214,
+   "tr_gelen": 6045,
+   "tr_oran": 2.6822167080231596,
+   "tr_dengesizlik": 0.45684891504559955,
+   "mesafe_esnekligi": -0.2639,
+   "tr_kaynak_katsayi": -1.188,
+   "tr_hedef_katsayi": -1.9928,
+   "tr_ilk3_hedef": [
+    "PL",
+    "DE",
+    "IT"
+   ]
+  }
+ ],
+ "gorsel": {
+  "dugum": 600,
+  "kenar": 38177,
+  "akis_payi": 0.6918150569870519
+ }
+}
